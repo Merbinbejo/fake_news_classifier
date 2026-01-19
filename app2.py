@@ -4,7 +4,7 @@ import re
 import torch
 from transformers import DistilBertTokenizerFast,DistilBertForSequenceClassification
 
-model_path=r"D:\project 1-fake_news_classifier\fake_classifier"
+model_path="./fake_classifier"
 
 tokenizer=DistilBertTokenizerFast.from_pretrained(model_path)
 model=DistilBertForSequenceClassification.from_pretrained(model_path)
@@ -105,3 +105,4 @@ if grade:
         st.error(f"🚨 **Fake News Detected**\n\nConfidence: **{confidence:.2%}**")
     else:
         st.success(f"✅ **Real News**\n\nConfidence: **{confidence:.2%}**")
+
